@@ -1,0 +1,20 @@
+.git
+.gitignore
+.venv*
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.idea
+.DS_Store
+
+# Exclude training datasets & large archives (only deepwriting_validation.npz is needed for API inference)
+data/deepwriting_training.npz
+data/deepwriting_dataset.zip
+data/*.pdf
+pretrained_models/*.tar.gz
+
+# Exclude run evaluations and local generated outputs
+output/
+runs/
+runs_evaluation/

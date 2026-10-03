@@ -270,7 +270,10 @@ class HandWritingDatasetConditional(HandWritingDataset):
 
         self.char_encoder = LabelEncoder()
         self.char_encoder.fit(self.alphabet)
-        self.one_hot_encoder = OneHotEncoder(sparse=False)
+        try:
+            self.one_hot_encoder = OneHotEncoder(sparse_output=False)
+        except TypeError:
+            self.one_hot_encoder = OneHotEncoder(sparse=False)
         self.one_hot_encoder.fit(int_alphabet)
         self.__encode_labels()
 

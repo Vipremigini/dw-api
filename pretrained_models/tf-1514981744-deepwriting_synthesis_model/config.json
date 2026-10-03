@@ -1,0 +1,96 @@
+{
+    "additive_q_mu": false,
+    "batch_size": 64,
+    "checkpoint_every_step": 1000,
+    "checkpoint_id": null,
+    "create_timeline": false,
+    "dataset_cls": "HandWritingDatasetConditionalTF",
+    "experiment_name": "lstm2-512_32_32-relu-class_loss-no_sigma_reg-var_pi-no_latent_h-bow_out",
+    "fc_layer_activation_func": "relu",
+    "gmm_component_size": 32,
+    "grad_clip_by_norm": 1,
+    "grad_clip_by_value": 0,
+    "img_summary_every_step": 10000,
+    "input_dims": [
+        3,
+        70,
+        1
+    ],
+    "input_keep_prop": 1,
+    "input_rnn": {
+        "cell_type": "lstm",
+        "num_layers": 1,
+        "size": 512
+    },
+    "latent_hidden_size": 512,
+    "latent_rnn": {
+        "cell_type": "lstm",
+        "num_layers": 1,
+        "size": 512
+    },
+    "latent_size": 32,
+    "learning_rate": 0.001,
+    "learning_rate_decay_rate": 0.96,
+    "learning_rate_decay_steps": 1000,
+    "learning_rate_type": "exponential",
+    "loss_weights": {
+        "classification_loss": 1,
+        "eoc_loss": 1,
+        "gmm_sigma_regularizer": null,
+        "kld_loss": 1,
+        "pen_loss": 1,
+        "reconstruction_loss": 1
+    },
+    "model_cls": "HandwritingVRNNGmmModel",
+    "model_dir": "./runs/tf-1514981744-lstm2-512_32_32-relu-class_loss-no_sigma_reg-var_pi-no_latent_h-bow_out",
+    "model_id": "tf-1514981744-lstm2-512_32_32-relu-class_loss-no_sigma_reg-var_pi-no_latent_h-bow_out",
+    "model_save_dir": "./runs/",
+    "num_epochs": 200,
+    "num_fc_layers": 1,
+    "num_gmm_components": 70,
+    "output": {
+        "activation_funcs": [
+            null,
+            "softplus",
+            "tanh",
+            "sigmoid",
+            "sigmoid"
+        ],
+        "dims": [
+            2,
+            2,
+            1,
+            1,
+            1
+        ],
+        "keys": [
+            "out_mu",
+            "out_sigma",
+            "out_rho",
+            "out_pen",
+            "out_eoc"
+        ]
+    },
+    "output_rnn": null,
+    "print_every_step": 2,
+    "reconstruction_loss": "nll_normal_bi",
+    "reduce_loss": "mean_per_step",
+    "seed": 17,
+    "tensorboard_verbose": 0,
+    "training_data": "./data/deepwriting_training.npz",
+    "use_batch_norm_fc": false,
+    "use_bow_labels": true,
+    "use_bucket_feeder": true,
+    "use_dynamic_rnn": true,
+    "use_latent_h_in_outputs": false,
+    "use_pi_as_content": false,
+    "use_real_pi_labels": true,
+    "use_soft_gmm": false,
+    "use_staging_area": true,
+    "use_temporal_latent_space": true,
+    "use_variational_pi": true,
+    "validate_every_step": 25,
+    "validate_model": false,
+    "validation_data": "./data/deepwriting_validation.npz",
+    "vrnn_cell_cls": "HandWritingVRNNGmmCell"
+}

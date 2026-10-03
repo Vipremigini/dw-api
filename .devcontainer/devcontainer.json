@@ -1,0 +1,20 @@
+{
+  "name": "DeepWriting Headless API",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "forwardPorts": [7860],
+  "portsAttributes": {
+    "7860": {
+      "label": "DeepWriting Headless API",
+      "onAutoForward": "notify",
+      "visibility": "public"
+    }
+  },
+  "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
+}

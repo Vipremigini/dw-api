@@ -127,7 +127,7 @@ def draw_stroke_svg(data, factor=0.01, svg_filename='sample.svg', color_labels=N
         if lift_pen == 1:
             p = "M " + str(abs_x) + "," + str(abs_y) + " "
         else:
-            p = "M +" + str(prev_x) + "," + str(prev_y) + " L " + str(abs_x) + "," + str(abs_y) + " "
+            p = "M " + str(prev_x) + "," + str(prev_y) + " L " + str(abs_x) + "," + str(abs_y) + " "
 
         lift_pen = data[idx, 2]
 
@@ -137,7 +137,7 @@ def draw_stroke_svg(data, factor=0.01, svg_filename='sample.svg', color_labels=N
             color = svgwrite.rgb(r, g, b)
         prev_color_label = color_labels[idx]
 
-        dwg.add(dwg.path(p).stroke(color, stroke_width).fill(color))
+        dwg.add(dwg.path(p, fill='none', stroke_linecap='round', stroke_linejoin='round').stroke(color, stroke_width))
 
     dwg.save()
     return dwg
