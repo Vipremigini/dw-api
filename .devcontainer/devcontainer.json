@@ -9,7 +9,7 @@
       "visibility": "public"
     }
   },
-  "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+  "postCreateCommand": "git lfs pull && pip install --no-cache-dir -r requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [
