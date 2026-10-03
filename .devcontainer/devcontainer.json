@@ -1,6 +1,9 @@
 {
   "name": "DeepWriting Headless API",
   "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
   "forwardPorts": [7860],
   "portsAttributes": {
     "7860": {
