@@ -76,17 +76,17 @@ class SynthesizeRequest(BaseModel):
         min_length=1,
         max_length=500,
         description="Text to synthesize into handwriting",
-        example="DeepWriting generates realistic digital ink.",
+        json_schema_extra={"example": "DeepWriting generates realistic digital ink."},
     )
     style: Optional[int] = Field(
         107,
         description="Reference handwriting style sample index (0 to 704). Pass null or -1 for random unbiased style.",
-        example=107,
+        json_schema_extra={"example": 107},
     )
     format: str = Field(
         "svg",
         description="Output format: 'svg', 'png', or 'json'",
-        example="svg",
+        json_schema_extra={"example": "svg"},
     )
     beautify: bool = Field(
         True,
